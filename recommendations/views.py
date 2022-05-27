@@ -22,6 +22,8 @@ model_file = open('nn_model.pkl', 'rb')
 model = pickle.load(model_file)
 
 # Create your views here.
+
+
 @api_view(['GET'])
 def apiOverview(request):
     api_urls = {
@@ -30,13 +32,15 @@ def apiOverview(request):
     }
     return Response(api_urls)
 
+
 @api_view(['GET'])
 def recommendAnimes(request, id):
     final_df = data[[col for col in data.columns if data[col].dtype != 'O']]
     final_df = pd.get_dummies(final_df)
     try:
         ind = recommend(final_df, model, id)
-        recommendations = data.iloc[ind[1:]][['title_en', 'poster_image', 'description']].to_json(orient='index')
+        recommendations = data.iloc[ind[1:]][[
+            'title_en', 'poster_image', 'description']].to_json(orient='index')
     except:
         return Response({
             'success': False

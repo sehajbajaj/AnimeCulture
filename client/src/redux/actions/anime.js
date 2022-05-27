@@ -4,7 +4,6 @@ import { FETCH_ANIME_LIST, GET_ANIME } from "../constants/actionTypes";
 export const fetchAnimeList = () => async (dispatch) => {
   try {
     const { data } = await anime.fetchAnimeList();
-    // console.log(data.data)
     const action = {
       type: FETCH_ANIME_LIST,
       payload: data,

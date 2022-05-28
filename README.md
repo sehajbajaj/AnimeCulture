@@ -151,7 +151,7 @@ Install requirements.txt in the root directory.
 
 ### Anime page
 
-![Animepage](https://user-images.githubusercontent.com/84325400/170776442-43c87df0-61c4-45f8-a179-5821484132f4.jpeg)
+![Animepage](https://user-images.githubusercontent.com/84325400/170817634-5433e585-222a-4857-baf0-363f906a09a5.jpeg)
 
 <!-- ACKNOWLEDGEMENTS -->
 

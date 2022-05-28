@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 function App() {
+  /* Routing */
   return (
     <div>
       <Router>
@@ -15,7 +16,10 @@ function App() {
         <main className="py-3">
           <Container>
             <Routes>
+              {/* Routes the screen to HomeScreen */}
               <Route path="/" element={<HomeScreen />} />
+
+              {/* Routes the screen to AnimeScreen */}
               <Route path="/anime/:id" exact element={<AnimeScreen />} />
             </Routes>
           </Container>

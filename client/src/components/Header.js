@@ -1,10 +1,11 @@
 import React from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Container } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 
 const Header = () => {
   return (
     <header>
+      {/* Navbar*/}
       <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
         <Container>
           <LinkContainer to="/">

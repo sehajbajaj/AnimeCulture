@@ -3,8 +3,10 @@ import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Anime = ({ anime, attributes }) => {
+  /* Anime Cards - gives basic information about an anime */
   return (
     <Card className="my-3 p-3 rounded">
+      {/* Links the card to the information page of a particular anime when clicked */}
       <Link to={`/anime/${anime.id}`}>
         <Card.Img src={attributes?.posterImage.medium} />
       </Link>

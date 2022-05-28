@@ -11,16 +11,16 @@ const AnimeScreen = () => {
     (state) => state.recommendations.recommendations
   );
   const params = useParams();
-  const [currAnime, setCurrAnime] = useState(null);
-  const animeList = useSelector((state) => state.anime.data);
-  const anime = animeList?.find((a) => a.id === params.id);
-  const [recAnime, setrecAnime] = useState([]);
+  const [currAnime, setCurrAnime] = useState(null); //Sets the current anime
+  const [recAnime, setrecAnime] = useState([]); //Sets the recommended anime
 
+  /* Getting Recommendations for Current Anime */
   useEffect(() => {
     dispatch(getRecommendations(params.id));
     console.log("recommendation", recommendations);
   }, [dispatch]);
 
+  /* Fetching the Anime from Kitsu API */
   useEffect(() => {
     axios
       .get(`https://kitsu.io/api/edge/anime?filter%5Bid%5D=${params.id}`)
@@ -41,10 +41,12 @@ const AnimeScreen = () => {
 
   return (
     <Container className="container">
+      {/* Button to go back to previous page */}
       <Link to="/" className="btn btn-light">
         Go Back
       </Link>
       <Row>
+        {/* Displaying information of the current anime */}
         <Col md={4}>
           <Image src={currAnime?.attributes?.posterImage.medium} fluid />
         </Col>
@@ -78,6 +80,7 @@ const AnimeScreen = () => {
       </Row>
       <br />
       <div>
+        {/* ==== RECOMMENDATIONS ==== */}
         <h2>Similar Animes</h2>
         <Row>
           {recAnime?.data?.map((anime, index) =>
@@ -94,6 +97,8 @@ const AnimeScreen = () => {
               </Col>
             ) : null
           )}
+
+          {/* Mapping the recommendations */}
           {recommendations &&
             Object.values(recommendations).map((anime) => (
               <Col key={anime.id} sm={12} md={6} xl={3}>

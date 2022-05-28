@@ -38,12 +38,8 @@ const HomeScreen = () => {
 
   let active = page;
   let items = [];
-  for (let number = 1; number <= 10; number++) {
-    items.push(
-      <Pagination.Item key={number} active={number === active}>
-        {number}
-      </Pagination.Item>
-    );
+  for (let number = 1; number <= 15; number++) {
+    items.push(<Pagination.Item key={number}>{number}</Pagination.Item>);
   }
 
   return (

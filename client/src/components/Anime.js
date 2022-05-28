@@ -10,7 +10,7 @@ const Anime = ({ anime, attributes }) => {
       </Link>
       <Card.Body>
         <Card.Title as="h5">
-          <strong>{attributes?.titles.en_jp}</strong>
+          <strong>{attributes?.titles.en}</strong>
         </Card.Title>
         <Card.Text as="p">
           <strong>Episode Count: </strong> {attributes?.episodeCount} <br />

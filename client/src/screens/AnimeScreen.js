@@ -51,7 +51,7 @@ const AnimeScreen = () => {
         <Col md={3}>
           <ListGroup variant="flush">
             <ListGroup.Item>
-              <h3>{currAnime?.attributes?.titles.en_jp}</h3>
+              <h3>{currAnime?.attributes?.titles.en}</h3>
             </ListGroup.Item>
             <ListGroup.Item>
               <p>Rated {currAnime?.attributes?.ageRating}</p>
@@ -80,18 +80,20 @@ const AnimeScreen = () => {
       <div>
         <h2>Similar Animes</h2>
         <Row>
-          {recAnime?.data?.map((anime) => (
-            <Col key={anime.id} sm={12} md={6} xl={3}>
-              <Card className="my-3 p-3 rounded">
-                <Card.Img src={anime.attributes.posterImage.medium} />
-                <Card.Body>
-                  <Card.Title as="h5">
-                    <strong>{anime.attributes.titles.en}</strong>
-                  </Card.Title>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
+          {recAnime?.data?.map((anime, index) =>
+            index < 7 && index != 0 ? (
+              <Col key={anime.id} sm={12} md={6} xl={3}>
+                <Card className="my-3 p-3 rounded">
+                  <Card.Img src={anime.attributes.posterImage.medium} />
+                  <Card.Body>
+                    <Card.Title as="h5">
+                      <strong>{anime.attributes.titles.en}</strong>
+                    </Card.Title>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ) : null
+          )}
           {recommendations &&
             Object.values(recommendations).map((anime) => (
               <Col key={anime.id} sm={12} md={6} xl={3}>

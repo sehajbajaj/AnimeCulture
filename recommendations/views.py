@@ -27,14 +27,13 @@ model = pickle.load(model_file)
 @api_view(['GET'])
 def apiOverview(request):
     api_urls = {
-        'GET API Overview': 'api/v1/overview',  # Overview to the django framework
-        'GET Anime Recommendations': 'api/v1/anime/:id/recommendations'  # Recommendations
+        'GET API Overview': 'api/v1/overview',
+        'GET Anime Recommendations': 'api/v1/anime/:id/recommendations'
     }
     return Response(api_urls)
 
 
 @api_view(['GET'])
-# Function to Recommend Animes when id of the current anime is provided
 def recommendAnimes(request, id):
     final_df = data[[col for col in data.columns if data[col].dtype != 'O']]
     final_df = pd.get_dummies(final_df)

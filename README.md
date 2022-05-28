@@ -3,7 +3,7 @@
 <p align="center">
  <a target="_blank" href="https://animeculture.herokuapp.com/">Link to the App</a>
     ·
- <a target="_blank" href="">Video Demo</a>
+ <a target="_blank" href="https://youtu.be/27upw6jTwVs">Video Demo</a>
 </p>
     
 <!-- TABLE OF CONTENTS -->

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Search from "../components/Search";
-import { Row, Col, Pagination, Image } from "react-bootstrap";
+import { Row, Col, Pagination } from "react-bootstrap";
 import Anime from "../components/Anime";
 import { useState } from "react";
 import axios from "axios";
@@ -16,7 +16,7 @@ const HomeScreen = () => {
     const url = "https://kitsu.io/api/edge/anime";
     axios
       .get(`${url}?page%5Blimit%5D=20&page%5Boffset%5D=${(page - 1) * 20}`) //Adding pagination
-      .then(function(response) {
+      .then(function (response) {
         setAnimeList(response.data);
         console.log(response);
       });
@@ -54,7 +54,7 @@ const HomeScreen = () => {
         />
 
         {/* Maps the data of search results if found */}
-        {search == "" ? (
+        {search === "" ? (
           animeList?.data?.map((anime) => (
             <Col key={anime.id} sm={12} md={6} xl={3}>
               <Anime attributes={anime.attributes} anime={anime} />

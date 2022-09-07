@@ -128,7 +128,8 @@ USE_TZ = True
 CORS_ALLOWED_ORIGINS = [
     "https://animeculture.herokuapp.com",
     "https://localhost:3000",
-    "https://127.0.0.1:8000"
+    "https://127.0.0.1:8000",
+    "https://anime-culture.onrender.com"
 ]
 
 STATIC_URL = '/static/'

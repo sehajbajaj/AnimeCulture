@@ -13,7 +13,7 @@ psycopg2==2.9.3
 python-dateutil==2.8.2
 pytz==2022.1
 scikit-learn
-scipy==1.8.1
+scipy
 six==1.16.0
 sklearn==0.0
 sqlparse==0.4.2

@@ -1,4 +1,4 @@
-<h1 align="center">Anime Culture (Recommendation System)</h1>
+<h1 align="center">Anime Culture Website(Recommendation System)</h1>
 
 <p align="center">
  <a target="_blank" href="https://animeculture.herokuapp.com/">Link to the App</a>
